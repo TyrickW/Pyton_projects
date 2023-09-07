@@ -1,3 +1,11 @@
+#Project description
+#At my organization, access to restricted content is controlled with an allowed list of IP addresses.
+#The "allow_list.txt" file identifies these IP addresses. A separate remove list identifies IP
+#addresses that should no longer have access to this content. I created an algorithm to
+#automate updating the "allow_list.txt" file and remove these IP addresses that should
+#no longer have access.
+
+
 # Define a function named `update_file` that takes in two parameters: `import_file` and `remove_list`
 def update_file(import_file, remove_list):
     with open(import_file, "r") as file:
@@ -11,7 +19,7 @@ def update_file(import_file, remove_list):
     for element in ip_addresses:
         # If current element is in `remove_list`,
         if element in remove_list:
-            # then current element should be removed from `ip_addresses`
+            # Then current element should be removed from `ip_addresses`
             ip_addresses.remove(element)
 
     # Convert `ip_addresses` back to a string so that it can be written into the text file
